@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".BookCategoriesActivity"
+    android:background="@color/white">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:layout_margin="15dp"
+    android:background="@color/white">
+    <TextView
+        android:id="@+id/textView_register_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/add_your_book"
+        android:textStyle="bold"
+        android:textAlignment="gravity"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+
+        />
+    <Button
+        android:id="@+id/button_register"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="50dp"
+        android:text="@string/add_category"
+        android:backgroundTint="@color/sky_blue"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addPDF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="TODO"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/ic_pdf_add"
+        android:tint="@color/white"
+        app:fabCustomSize="50dp"
+        app:backgroundTint="@color/sky_blue"/>
+
+
+
+ </RelativeLayout>
+</ScrollView>
