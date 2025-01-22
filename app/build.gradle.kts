@@ -52,7 +52,7 @@ dependencies {
     implementation ("com.google.firebase:firebase-storage")
     implementation ("com.google.firebase:firebase-firestore")
 
-    implementation(platform("com.google.firebase:firebase-bom:33.1.1"))
+    implementation(platform("com.google.firebase:firebase-bom:33.8.0"))
     androidTestImplementation(libs.junit.junit)
     androidTestImplementation(libs.junit.junit)
     androidTestImplementation(libs.junit.jupiter)

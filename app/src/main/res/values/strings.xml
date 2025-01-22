@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">The Book Heaven</string>
-    <string name="username">Username</string>
-    <string name="password">Password</string>
-    <string name="enter">Enter</string>
-    <string name="Login">Login</string>
+    <string name="app_name" translatable="false">The Book Heaven</string>
+    <string name="username" translatable="false">Username</string>
+    <string name="password" translatable="false">Password</string>
+    <string name="enter" translatable="false">Enter</string>
+    <string name="Login" translatable="false">Login</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="Email">Email</string>

@@ -1,27 +1,37 @@
 {
   "project_info": {
-    "project_number": "847720095359",
-    "firebase_url": "https://the-book-heaven-default-rtdb.firebaseio.com",
-    "project_id": "the-book-heaven",
-    "storage_bucket": "the-book-heaven.appspot.com"
+    "project_number": "487782998482",
+    "firebase_url": "https://test1-d9256-default-rtdb.firebaseio.com",
+    "project_id": "test1-d9256",
+    "storage_bucket": "test1-d9256.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:847720095359:android:2560e258ee2164d5a9694a",
+        "mobilesdk_app_id": "1:487782998482:android:0a327ff5006fc348fe280b",
         "android_client_info": {
           "package_name": "com.example.test1"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "487782998482-61mejlmfk30sd092ov2jfge1afmkbfro.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyDDHdaLwd57uL_pUVv0iBoG78MeWPUwDg8"
+          "current_key": "AIzaSyDDei62-_P6stW6ppLTdsp3NqNc696-Ebg"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "487782998482-61mejlmfk30sd092ov2jfge1afmkbfro.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
