@@ -39,6 +39,8 @@ public class AddBookActivity extends AppCompatActivity {
 
         booksRef = FirebaseDatabase.getInstance().getReference("books");
 
+
+
         Button buttonAddBook = findViewById(R.id.button_addBook);
         buttonAddBook.setOnClickListener(new View.OnClickListener() {
             @Override

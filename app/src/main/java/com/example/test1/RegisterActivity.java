@@ -1,6 +1,5 @@
 package com.example.test1;
 
-import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -8,11 +7,8 @@ import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -26,12 +22,9 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -46,18 +39,22 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        // Initialize UI elements
         editTextEmail = findViewById(R.id.et_register_email);
         editTextPassword = findViewById(R.id.et_register_password);
         progressBar = findViewById(R.id.progress_bar);
         authProfile = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance(); // Initialize Firestore
 
+        // Register button click listener
         Button buttonRegister = findViewById(R.id.button_register);
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String email = editTextEmail.getText().toString();
                 String password = editTextPassword.getText().toString();
+
+                // Validate user input
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(RegisterActivity.this, "Please enter your email", Toast.LENGTH_SHORT).show();
                     editTextEmail.setError("Email is required");
@@ -86,24 +83,34 @@ public class RegisterActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     FirebaseUser firebaseUser = authProfile.getCurrentUser();
                     if (firebaseUser != null) {
-                        storeUserData(firebaseUser, false); // Assuming new users are not admins
+                        storeUserData(firebaseUser); // Assuming new users are not admins
                     }
                 } else {
-                    try {
-                        throw task.getException();
-                    } catch (Exception e) {
-                        Toast.makeText(RegisterActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
+                    handleRegistrationErrors(task.getException());
                 }
             }
         });
     }
 
-    private void storeUserData(FirebaseUser firebaseUser, boolean isAdmin) {
+    private void handleRegistrationErrors(Exception exception) {
+        if (exception != null) {
+            if (exception instanceof FirebaseAuthWeakPasswordException) {
+                Toast.makeText(RegisterActivity.this, "Weak password: " + ((FirebaseAuthWeakPasswordException) exception).getReason(), Toast.LENGTH_SHORT).show();
+            } else if (exception instanceof FirebaseAuthInvalidCredentialsException) {
+                Toast.makeText(RegisterActivity.this, "Invalid email format", Toast.LENGTH_SHORT).show();
+            } else if (exception instanceof FirebaseAuthUserCollisionException) {
+                Toast.makeText(RegisterActivity.this, "Email already in use", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(RegisterActivity.this, "Registration failed: " + exception.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    private void storeUserData(FirebaseUser firebaseUser) {
         String userId = firebaseUser.getUid();
         Map<String, Object> user = new HashMap<>();
         user.put("email", firebaseUser.getEmail());
-        user.put("isAdmin", isAdmin);
+        user.put("isAdmin", false);
 
         DocumentReference documentReference = db.collection("Users").document(userId);
         documentReference.set(user).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -112,7 +119,7 @@ public class RegisterActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     Toast.makeText(RegisterActivity.this, "User registered successfully", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(RegisterActivity.this, UserProfileActivity.class));
-                    finish();
+                    finish(); // Close RegisterActivity
                 } else {
                     Toast.makeText(RegisterActivity.this, "Failed to register user", Toast.LENGTH_SHORT).show();
                 }

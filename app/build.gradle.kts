@@ -47,12 +47,12 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 
-    implementation ("com.google.firebase:firebase-auth")
-    implementation ("com.google.firebase:firebase-database")
-    implementation ("com.google.firebase:firebase-storage")
-    implementation ("com.google.firebase:firebase-firestore")
+    implementation (libs.google.firebase.auth)
+    implementation (libs.google.firebase.database)
+    implementation (libs.firebase.storage)
+    implementation (libs.firebase.firestore)
 
-    implementation(platform("com.google.firebase:firebase-bom:33.8.0"))
+    implementation(platform(libs.firebase.bom))
     androidTestImplementation(libs.junit.junit)
     androidTestImplementation(libs.junit.junit)
     androidTestImplementation(libs.junit.jupiter)
