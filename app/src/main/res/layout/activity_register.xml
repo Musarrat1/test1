@@ -93,35 +93,13 @@
             android:background="@drawable/border"
             />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView_register_date_of_birth"
-            android:text="@string/date_of_birth"
-            android:layout_below="@id/et_register_phone_number"
-            android:textColor="@color/sky_blue"
-            android:padding="6dp"
-            android:textSize="16sp"
-            android:layout_marginTop="10dp" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/et_register_data_of_birth"
-            android:hint="@string/enter_your_date_of_birth_dd_mm_yy"
-            android:inputType="date"
-            android:backgroundTint="#DDD7D7"
-            android:focusable="false"
-            android:textSize="16sp"
-            android:padding="8dp"
-            android:layout_below="@+id/textView_register_date_of_birth"
-            android:background="@drawable/border"
-            />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView_register_gender"
             android:text="@string/gender"
-            android:layout_below="@id/et_register_data_of_birth"
+            android:layout_below="@id/et_register_phone_number"
             android:textColor="@color/sky_blue"
             android:padding="6dp"
             android:textSize="16sp"

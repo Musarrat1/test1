@@ -19,10 +19,12 @@
             android:name=".BookAdapterActivity"
             android:exported="false" />
         <!-- Activities -->
-        <activity android:name=".ViewBooksActivity" />
+        <activity
+            android:name=".ViewBooksActivity"
+            android:exported="false" />
         <activity
             android:name=".DeleteBookActivity"
-            android:exported="false" />
+            android:exported="true" /> <!-- Changed this to true -->
         <activity
             android:name=".UpdateBookActivity"
             android:exported="false" />
@@ -32,6 +34,12 @@
         <activity android:name=".AdminPromotionActivity" />
         <activity android:name=".AdminRegisterActivity" />
         <activity android:name=".AdminHomeActivity" />
+        <activity
+            android:name=".WishlistActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditProfileActivity"
+            android:exported="false" />
         <activity
             android:name=".UserProfileActivity"
             android:exported="false" />

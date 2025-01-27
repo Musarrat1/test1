@@ -1,4 +1,3 @@
-// Book.java
 
 package com.example.test1;
 

@@ -28,7 +28,6 @@ public class LoginActivity extends AppCompatActivity {
     private EditText editTextLoginEmail, editTextLoginPassword;
     private ProgressBar progressBar;
     private FirebaseAuth authProfile;
-    private Button buttonAdminPanel;
     private static final String TAG = "LoginActivity";
 
     @Override
@@ -43,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         editTextLoginEmail = findViewById(R.id.editText_login_email);
         editTextLoginPassword = findViewById(R.id.editText_login_password);
         progressBar = findViewById(R.id.progress_bar);
-        buttonAdminPanel = findViewById(R.id.button_admin_panel);
+        Button buttonAdminPanel = findViewById(R.id.button_admin_panel);
         authProfile = FirebaseAuth.getInstance();
 
         Button buttonLogin = findViewById(R.id.button_login);

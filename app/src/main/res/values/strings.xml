@@ -54,6 +54,14 @@
     <string name="book_details">Book details</string>
     <string name="book_id">Book ID:</string>
     <string name="delete">Delete</string>
+    <string name="delete_book">Delete Book</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="save">Save</string>
+    <string name="wishlist">Wishlist</string>
+    <string name="user_profile">User Profile</string>
+    <string name="edit_profile1">Edit Profile</string>
 
 
 </resources>

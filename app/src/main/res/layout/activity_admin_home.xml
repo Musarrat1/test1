@@ -25,21 +25,6 @@
         android:layout_marginTop="-50dp"
         android:text="@string/add_book"
         android:backgroundTint="@color/sky_blue"/>
-    <Button
-        android:id="@+id/btn_update_book"
-        android:layout_width="200dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="-50dp"
-        android:layout_marginBottom="70dp"
-        android:backgroundTint="@color/sky_blue"
-        android:text="@string/update_books"/>
-    <Button
-        android:id="@+id/btn_Delete_book"
-        android:layout_width="200dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="-50dp"
-        android:layout_marginBottom="70dp"
-        android:backgroundTint="@color/sky_blue"
-        android:text="@string/delete_books"/>
+
 
 </LinearLayout>

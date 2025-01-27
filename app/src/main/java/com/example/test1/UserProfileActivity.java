@@ -10,24 +10,33 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class UserProfileActivity extends AppCompatActivity {
 
-    private Button buttonViewBooks;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
 
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("User Profile");
+            getSupportActionBar().setTitle("User  Profile");
         }
 
-        buttonViewBooks = findViewById(R.id.button_view_books);
-        buttonViewBooks.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(UserProfileActivity.this, ViewBooksActivity.class);
-                startActivity(intent);
-            }
+        // Initialize View Books button
+        Button buttonViewBooks = findViewById(R.id.button_view_books);
+        buttonViewBooks.setOnClickListener(v -> {
+            Intent intent = new Intent(UserProfileActivity.this, ViewBooksActivity.class);
+            startActivity(intent);
+        });
+
+        // Initialize Edit Profile button
+        Button buttonEditProfile = findViewById(R.id.button_edit_profile);
+        buttonEditProfile.setOnClickListener(v -> {
+            Intent intent = new Intent(UserProfileActivity.this, EditProfileActivity.class);
+            startActivity(intent);
+        });
+        Button wishlistButton = findViewById(R.id.button_wishlist);
+        wishlistButton.setOnClickListener(view -> {
+            // Open Wishlist Activity or perform desired action
+            Intent intent = new Intent(UserProfileActivity.this, WishlistActivity.class);
+            startActivity(intent);
         });
     }
 }

@@ -1,4 +1,3 @@
-// AddBookActivity.java
 
 package com.example.test1;
 

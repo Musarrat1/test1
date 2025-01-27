@@ -19,8 +19,8 @@ public class AdminHomeActivity extends AppCompatActivity {
         }
 
         Button buttonAddBook = findViewById(R.id.btn_add_book);
-        Button buttonUpdateBook=findViewById(R.id.btn_update_book);
-        Button buttonDeleteBook=findViewById(R.id.btn_Delete_book);
+
+        //Button buttonDeleteBook=findViewById(R.id.btn_Delete_book);
         buttonAddBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -28,19 +28,13 @@ public class AdminHomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        buttonUpdateBook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AdminHomeActivity.this, UpdateBookActivity.class);
-                startActivity(intent);
-            }
-        });
-        buttonDeleteBook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AdminHomeActivity.this, DeleteBookActivity.class);
-                startActivity(intent);
-            }
-        });
+
+      //  buttonDeleteBook.setOnClickListener(new View.OnClickListener() {
+          //  @Override
+           // public void onClick(View v) {
+            //    Intent intent = new Intent(AdminHomeActivity.this, DeleteBookActivity.class);
+            //    startActivity(intent);
+           // }
+        //});
     }
 }
